@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		F5127C852C342301003EA34D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5127C842C342301003EA34D /* AppDelegate.swift */; };
 		F5127C872C342301003EA34D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5127C862C342301003EA34D /* SceneDelegate.swift */; };
-		F5127C892C342301003EA34D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5127C882C342301003EA34D /* ViewController.swift */; };
 		F5127C8F2C342301003EA34D /* Moody.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F5127C8D2C342301003EA34D /* Moody.xcdatamodeld */; };
 		F5127C912C342304003EA34D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5127C902C342304003EA34D /* Assets.xcassets */; };
 		F5127C942C342304003EA34D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5127C922C342304003EA34D /* LaunchScreen.storyboard */; };
+		F5761AAA2C34449D004AD19A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5761AA92C34449D004AD19A /* HomeViewController.swift */; };
+		F5761AAC2C3444B1004AD19A /* MyMoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5761AAB2C3444B1004AD19A /* MyMoodViewController.swift */; };
+		F5761AAE2C3444B8004AD19A /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5761AAD2C3444B8004AD19A /* LibraryViewController.swift */; };
+		F5761AB02C3444DE004AD19A /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5761AAF2C3444DE004AD19A /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F5127C812C342301003EA34D /* Moody.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moody.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5127C842C342301003EA34D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5127C862C342301003EA34D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F5127C882C342301003EA34D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F5127C8E2C342301003EA34D /* Moody.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Moody.xcdatamodel; sourceTree = "<group>"; };
 		F5127C902C342304003EA34D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5127C932C342304003EA34D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5127C952C342304003EA34D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5761AA92C34449D004AD19A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F5761AAB2C3444B1004AD19A /* MyMoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMoodViewController.swift; sourceTree = "<group>"; };
+		F5761AAD2C3444B8004AD19A /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		F5761AAF2C3444DE004AD19A /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +84,10 @@
 		F5761AA42C343FD7004AD19A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F5127C882C342301003EA34D /* ViewController.swift */,
+				F5761AA92C34449D004AD19A /* HomeViewController.swift */,
+				F5761AAB2C3444B1004AD19A /* MyMoodViewController.swift */,
+				F5761AAD2C3444B8004AD19A /* LibraryViewController.swift */,
+				F5761AAF2C3444DE004AD19A /* TabBarViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -185,8 +194,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5127C892C342301003EA34D /* ViewController.swift in Sources */,
+				F5761AB02C3444DE004AD19A /* TabBarViewController.swift in Sources */,
+				F5761AAA2C34449D004AD19A /* HomeViewController.swift in Sources */,
+				F5761AAC2C3444B1004AD19A /* MyMoodViewController.swift in Sources */,
 				F5127C852C342301003EA34D /* AppDelegate.swift in Sources */,
+				F5761AAE2C3444B8004AD19A /* LibraryViewController.swift in Sources */,
 				F5127C8F2C342301003EA34D /* Moody.xcdatamodeld in Sources */,
 				F5127C872C342301003EA34D /* SceneDelegate.swift in Sources */,
 			);
