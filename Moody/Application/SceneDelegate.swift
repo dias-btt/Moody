@@ -15,11 +15,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
+<<<<<<< HEAD
         if AuthManager.shared.isSignedIn{
             window.rootViewController = TabBarViewController()
         } else {
             window.rootViewController = UINavigationController(rootViewController: WelcomeViewController())
         }
+=======
+        window.rootViewController = TabBarViewController()
+>>>>>>> 6e8291bb32a40abed9345ba92c5d79c98409772a
         window.makeKeyAndVisible()
         self.window = window
     }
