@@ -9,21 +9,43 @@
 /* Begin PBXBuildFile section */
 		F5127C852C342301003EA34D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5127C842C342301003EA34D /* AppDelegate.swift */; };
 		F5127C872C342301003EA34D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5127C862C342301003EA34D /* SceneDelegate.swift */; };
-		F5127C892C342301003EA34D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5127C882C342301003EA34D /* ViewController.swift */; };
 		F5127C8F2C342301003EA34D /* Moody.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F5127C8D2C342301003EA34D /* Moody.xcdatamodeld */; };
 		F5127C912C342304003EA34D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5127C902C342304003EA34D /* Assets.xcassets */; };
 		F5127C942C342304003EA34D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5127C922C342304003EA34D /* LaunchScreen.storyboard */; };
+		F55F06742C3571CF0001FFE6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55F06732C3571CF0001FFE6 /* Extensions.swift */; };
+		F5761AAA2C34449D004AD19A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5761AA92C34449D004AD19A /* HomeViewController.swift */; };
+		F5761AAC2C3444B1004AD19A /* MyMoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5761AAB2C3444B1004AD19A /* MyMoodViewController.swift */; };
+		F5761AAE2C3444B8004AD19A /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5761AAD2C3444B8004AD19A /* LibraryViewController.swift */; };
+		F5761AB02C3444DE004AD19A /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5761AAF2C3444DE004AD19A /* TabBarViewController.swift */; };
+		F5761AB22C344907004AD19A /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5761AB12C344907004AD19A /* AuthManager.swift */; };
+		F5761AB42C344BBE004AD19A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5761AB32C344BBE004AD19A /* WelcomeViewController.swift */; };
+		F5761AB72C344E6F004AD19A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F5761AB62C344E6F004AD19A /* SnapKit */; };
+		F5761AB92C344E6F004AD19A /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = F5761AB82C344E6F004AD19A /* SnapKit-Dynamic */; };
+		F5761AC12C3451E3004AD19A /* Gotham-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F5761ABF2C3451E3004AD19A /* Gotham-Light.otf */; };
+		F5761AC22C3451E3004AD19A /* Gotham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F5761AC02C3451E3004AD19A /* Gotham-Bold.otf */; };
+		F5761AC52C345479004AD19A /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5761AC42C345479004AD19A /* AuthViewController.swift */; };
+		F5A04CD72C36EC30003068DE /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A04CD62C36EC30003068DE /* AuthResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F5127C812C342301003EA34D /* Moody.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moody.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5127C842C342301003EA34D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5127C862C342301003EA34D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F5127C882C342301003EA34D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F5127C8E2C342301003EA34D /* Moody.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Moody.xcdatamodel; sourceTree = "<group>"; };
 		F5127C902C342304003EA34D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5127C932C342304003EA34D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5127C952C342304003EA34D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F55F06732C3571CF0001FFE6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F5761AA92C34449D004AD19A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F5761AAB2C3444B1004AD19A /* MyMoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMoodViewController.swift; sourceTree = "<group>"; };
+		F5761AAD2C3444B8004AD19A /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		F5761AAF2C3444DE004AD19A /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		F5761AB12C344907004AD19A /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		F5761AB32C344BBE004AD19A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		F5761ABF2C3451E3004AD19A /* Gotham-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Light.otf"; sourceTree = "<group>"; };
+		F5761AC02C3451E3004AD19A /* Gotham-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Bold.otf"; sourceTree = "<group>"; };
+		F5761AC42C345479004AD19A /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		F5A04CD62C36EC30003068DE /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +53,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5761AB72C344E6F004AD19A /* SnapKit in Frameworks */,
+				F5761AB92C344E6F004AD19A /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +80,8 @@
 		F5127C832C342301003EA34D /* Moody */ = {
 			isa = PBXGroup;
 			children = (
+				F5A04CD52C36EC28003068DE /* Models */,
+				F5761ABC2C345012004AD19A /* Constants */,
 				F5761AA82C343FF3004AD19A /* Application */,
 				F5761AA72C343FED004AD19A /* Resources */,
 				F5761AA62C343FE5004AD19A /* Managers */,
@@ -78,7 +104,12 @@
 		F5761AA42C343FD7004AD19A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F5127C882C342301003EA34D /* ViewController.swift */,
+				F5761AA92C34449D004AD19A /* HomeViewController.swift */,
+				F5761AAB2C3444B1004AD19A /* MyMoodViewController.swift */,
+				F5761AAD2C3444B8004AD19A /* LibraryViewController.swift */,
+				F5761AAF2C3444DE004AD19A /* TabBarViewController.swift */,
+				F5761AB32C344BBE004AD19A /* WelcomeViewController.swift */,
+				F5761AC42C345479004AD19A /* AuthViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -93,6 +124,7 @@
 		F5761AA62C343FE5004AD19A /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				F5761AB12C344907004AD19A /* AuthManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -100,7 +132,10 @@
 		F5761AA72C343FED004AD19A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F5761AC02C3451E3004AD19A /* Gotham-Bold.otf */,
+				F5761ABF2C3451E3004AD19A /* Gotham-Light.otf */,
 				F5127C902C342304003EA34D /* Assets.xcassets */,
+				F55F06732C3571CF0001FFE6 /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -113,6 +148,21 @@
 				F5127C842C342301003EA34D /* AppDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		F5761ABC2C345012004AD19A /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		F5A04CD52C36EC28003068DE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F5A04CD62C36EC30003068DE /* AuthResponse.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +181,10 @@
 			dependencies = (
 			);
 			name = Moody;
+			packageProductDependencies = (
+				F5761AB62C344E6F004AD19A /* SnapKit */,
+				F5761AB82C344E6F004AD19A /* SnapKit-Dynamic */,
+			);
 			productName = Moody;
 			productReference = F5127C812C342301003EA34D /* Moody.app */;
 			productType = "com.apple.product-type.application";
@@ -159,6 +213,9 @@
 				Base,
 			);
 			mainGroup = F5127C782C342301003EA34D;
+			packageReferences = (
+				F5761AB52C344E6F004AD19A /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = F5127C822C342301003EA34D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -173,8 +230,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5761AC22C3451E3004AD19A /* Gotham-Bold.otf in Resources */,
 				F5127C942C342304003EA34D /* LaunchScreen.storyboard in Resources */,
 				F5127C912C342304003EA34D /* Assets.xcassets in Resources */,
+				F5761AC12C3451E3004AD19A /* Gotham-Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,9 +244,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5127C892C342301003EA34D /* ViewController.swift in Sources */,
+				F5761AB42C344BBE004AD19A /* WelcomeViewController.swift in Sources */,
+				F5761AB02C3444DE004AD19A /* TabBarViewController.swift in Sources */,
+				F5761AC52C345479004AD19A /* AuthViewController.swift in Sources */,
+				F5761AB22C344907004AD19A /* AuthManager.swift in Sources */,
+				F5761AAA2C34449D004AD19A /* HomeViewController.swift in Sources */,
+				F5761AAC2C3444B1004AD19A /* MyMoodViewController.swift in Sources */,
 				F5127C852C342301003EA34D /* AppDelegate.swift in Sources */,
+				F5761AAE2C3444B8004AD19A /* LibraryViewController.swift in Sources */,
 				F5127C8F2C342301003EA34D /* Moody.xcdatamodeld in Sources */,
+				F55F06742C3571CF0001FFE6 /* Extensions.swift in Sources */,
+				F5A04CD72C36EC30003068DE /* AuthResponse.swift in Sources */,
 				F5127C872C342301003EA34D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +472,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F5761AB52C344E6F004AD19A /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F5761AB62C344E6F004AD19A /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F5761AB52C344E6F004AD19A /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		F5761AB82C344E6F004AD19A /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F5761AB52C344E6F004AD19A /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		F5127C8D2C342301003EA34D /* Moody.xcdatamodeld */ = {
