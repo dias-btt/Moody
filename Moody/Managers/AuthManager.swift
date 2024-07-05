@@ -10,6 +10,8 @@ import Foundation
 final class AuthManager {
     static let shared = AuthManager()
     
+    private var refreshingToken = false
+    
     private init() {}
     
     struct Constants {
@@ -93,17 +95,46 @@ final class AuthManager {
         .resume()
     }
     
+    private var onRefreshBlocks = [((String) -> Void)]()
+    
+    public func withValidToken(completion: @escaping (String) -> Void){
+        guard !refreshingToken else {
+            onRefreshBlocks.append(completion)
+            return
+        }
+        
+        if shouldRefreshToken {
+            //refresh
+            refreshAccessToken {[weak self] success in
+                if let token = self?.accessToken, success {
+                    completion(token)
+                }
+            }
+        } else {
+            if let token = accessToken {
+                completion(token)
+            }
+        }
+    }
     
     public func refreshAccessToken(completion: @escaping (Bool) -> Void){
+        
+        guard !refreshingToken else {
+            return
+        }
+        
         guard shouldRefreshToken else {
             completion(true)
             return
         }
+        
         guard let refreshToken = self.refreshToken else {
             return
         }
         
         guard let url = URL(string: Constants.tokenAPIUrl) else {return}
+        
+        refreshingToken = true
         
         var components = URLComponents()
         components.queryItems = [
@@ -125,6 +156,7 @@ final class AuthManager {
         request.setValue("Basic \(basic64)", forHTTPHeaderField: "Authorization")
         
         URLSession.shared.dataTask(with: request) { [weak self] data, _, error in
+            self?.refreshingToken = false
             guard let data = data, error == nil else {
                 completion(false)
                 return
@@ -132,6 +164,7 @@ final class AuthManager {
             
             do{
                 let result = try JSONDecoder().decode(AuthResponse.self, from: data)
+                self?.onRefreshBlocks.forEach{$0(result.accessToken)}
                 self?.cacheToken(result: result)
                 completion(true)
             } catch {
