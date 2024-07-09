@@ -13,6 +13,7 @@
 		F5127C912C342304003EA34D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5127C902C342304003EA34D /* Assets.xcassets */; };
 		F5127C942C342304003EA34D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5127C922C342304003EA34D /* LaunchScreen.storyboard */; };
 		F55185172C3D341C00AEAFC2 /* SignOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55185162C3D341C00AEAFC2 /* SignOutView.swift */; };
+		F55185192C3D3F0300AEAFC2 /* TopTracksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55185182C3D3F0300AEAFC2 /* TopTracksResponse.swift */; };
 		F55F06742C3571CF0001FFE6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55F06732C3571CF0001FFE6 /* Extensions.swift */; };
 		F5761AAA2C34449D004AD19A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5761AA92C34449D004AD19A /* HomeViewController.swift */; };
 		F5761AAC2C3444B1004AD19A /* MyMoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5761AAB2C3444B1004AD19A /* MyMoodViewController.swift */; };
@@ -42,6 +43,7 @@
 		F5127C932C342304003EA34D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5127C952C342304003EA34D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F55185162C3D341C00AEAFC2 /* SignOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutView.swift; sourceTree = "<group>"; };
+		F55185182C3D3F0300AEAFC2 /* TopTracksResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTracksResponse.swift; sourceTree = "<group>"; };
 		F55F06732C3571CF0001FFE6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F5761AA92C34449D004AD19A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F5761AAB2C3444B1004AD19A /* MyMoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMoodViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			children = (
 				F5A04CD62C36EC30003068DE /* AuthResponse.swift */,
 				F5D0AD842C382B9F00A1AD1F /* UserProfile.swift */,
+				F55185182C3D3F0300AEAFC2 /* TopTracksResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5761AB42C344BBE004AD19A /* WelcomeViewController.swift in Sources */,
+				F55185192C3D3F0300AEAFC2 /* TopTracksResponse.swift in Sources */,
 				F5761AB02C3444DE004AD19A /* TabBarViewController.swift in Sources */,
 				F5D0AD852C382B9F00A1AD1F /* UserProfile.swift in Sources */,
 				F5761AC52C345479004AD19A /* AuthViewController.swift in Sources */,

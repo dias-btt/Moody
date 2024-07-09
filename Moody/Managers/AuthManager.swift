@@ -19,7 +19,7 @@ final class AuthManager {
         static let clientSecret = "ec12ed2ee2c441699922d698ff943dcc"
         static let tokenAPIUrl = "https://accounts.spotify.com/api/token"
         static let redirect_uri = "https://chatgpt.com"
-        static let scope = "user-read-private"
+        static let scope = "user-read-private user-top-read"
     }
     
     public var signInURL: URL? {

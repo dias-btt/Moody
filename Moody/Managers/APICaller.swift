@@ -19,7 +19,7 @@ enum APIError: Error {
 
 struct Constants {
     static let baseAPIUrl = "https://api.spotify.com/v1"
-    
+    static let baseTopUrl = "https://api.spotify.com/v1/me/top"
 }
 
 final class APICaller {
@@ -42,6 +42,29 @@ final class APICaller {
                     let result = try JSONDecoder().decode(UserProfile.self, from: data)
                     print(result)
                     completion(.success(result))
+                } catch {
+                    completion(.failure(APIError.decodingFailure))
+                    print("Error \(error)")
+                }
+            }
+            task.resume()
+        }
+    }
+    
+    public func getTopFiveTracks(completion: @escaping (Result<String, Error>) -> Void){
+        createRequest(with: URL(string: Constants.baseTopUrl + "/tracks"),
+                      type: .GET)
+        { request in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.dataFailure))
+                    return
+                }
+                
+                do {
+                    let result = try JSONSerialization.jsonObject(with: data)
+                    print(result)
+                    //completion(.success(result))
                 } catch {
                     completion(.failure(APIError.decodingFailure))
                     print("Error \(error)")
