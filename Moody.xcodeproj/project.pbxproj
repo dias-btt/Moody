@@ -12,6 +12,7 @@
 		F5127C8F2C342301003EA34D /* Moody.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F5127C8D2C342301003EA34D /* Moody.xcdatamodeld */; };
 		F5127C912C342304003EA34D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5127C902C342304003EA34D /* Assets.xcassets */; };
 		F5127C942C342304003EA34D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5127C922C342304003EA34D /* LaunchScreen.storyboard */; };
+		F55185172C3D341C00AEAFC2 /* SignOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55185162C3D341C00AEAFC2 /* SignOutView.swift */; };
 		F55F06742C3571CF0001FFE6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55F06732C3571CF0001FFE6 /* Extensions.swift */; };
 		F5761AAA2C34449D004AD19A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5761AA92C34449D004AD19A /* HomeViewController.swift */; };
 		F5761AAC2C3444B1004AD19A /* MyMoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5761AAB2C3444B1004AD19A /* MyMoodViewController.swift */; };
@@ -24,10 +25,11 @@
 		F5761AC12C3451E3004AD19A /* Gotham-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F5761ABF2C3451E3004AD19A /* Gotham-Light.otf */; };
 		F5761AC22C3451E3004AD19A /* Gotham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F5761AC02C3451E3004AD19A /* Gotham-Bold.otf */; };
 		F5761AC52C345479004AD19A /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5761AC42C345479004AD19A /* AuthViewController.swift */; };
+		F577BE8A2C3AD8E3007B636C /* PlaylistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F577BE892C3AD8E3007B636C /* PlaylistCollectionViewCell.swift */; };
 		F5A04CD72C36EC30003068DE /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A04CD62C36EC30003068DE /* AuthResponse.swift */; };
 		F5D0AD832C382B5100A1AD1F /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D0AD822C382B5100A1AD1F /* APICaller.swift */; };
 		F5D0AD852C382B9F00A1AD1F /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D0AD842C382B9F00A1AD1F /* UserProfile.swift */; };
-		F5D0AD872C383BA000A1AD1F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D0AD862C383BA000A1AD1F /* ProfileViewController.swift */; };
+		F5D0AD872C383BA000A1AD1F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D0AD862C383BA000A1AD1F /* ProfileView.swift */; };
 		F5D0AD8A2C383CAF00A1AD1F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F5D0AD892C383CAF00A1AD1F /* Kingfisher */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,7 @@
 		F5127C902C342304003EA34D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5127C932C342304003EA34D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5127C952C342304003EA34D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F55185162C3D341C00AEAFC2 /* SignOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutView.swift; sourceTree = "<group>"; };
 		F55F06732C3571CF0001FFE6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F5761AA92C34449D004AD19A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F5761AAB2C3444B1004AD19A /* MyMoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMoodViewController.swift; sourceTree = "<group>"; };
@@ -49,10 +52,11 @@
 		F5761ABF2C3451E3004AD19A /* Gotham-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Light.otf"; sourceTree = "<group>"; };
 		F5761AC02C3451E3004AD19A /* Gotham-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Bold.otf"; sourceTree = "<group>"; };
 		F5761AC42C345479004AD19A /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		F577BE892C3AD8E3007B636C /* PlaylistCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCollectionViewCell.swift; sourceTree = "<group>"; };
 		F5A04CD62C36EC30003068DE /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		F5D0AD822C382B5100A1AD1F /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		F5D0AD842C382B9F00A1AD1F /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
-		F5D0AD862C383BA000A1AD1F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F5D0AD862C383BA000A1AD1F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,13 +116,12 @@
 		F5761AA42C343FD7004AD19A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F577BE882C3AD16A007B636C /* Library */,
 				F5761AA92C34449D004AD19A /* HomeViewController.swift */,
 				F5761AAB2C3444B1004AD19A /* MyMoodViewController.swift */,
-				F5761AAD2C3444B8004AD19A /* LibraryViewController.swift */,
 				F5761AAF2C3444DE004AD19A /* TabBarViewController.swift */,
 				F5761AB32C344BBE004AD19A /* WelcomeViewController.swift */,
 				F5761AC42C345479004AD19A /* AuthViewController.swift */,
-				F5D0AD862C383BA000A1AD1F /* ProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -165,6 +168,17 @@
 			children = (
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		F577BE882C3AD16A007B636C /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				F5D0AD862C383BA000A1AD1F /* ProfileView.swift */,
+				F5761AAD2C3444B8004AD19A /* LibraryViewController.swift */,
+				F577BE892C3AD8E3007B636C /* PlaylistCollectionViewCell.swift */,
+				F55185162C3D341C00AEAFC2 /* SignOutView.swift */,
+			);
+			path = Library;
 			sourceTree = "<group>";
 		};
 		F5A04CD52C36EC28003068DE /* Models */ = {
@@ -263,8 +277,9 @@
 				F5761AC52C345479004AD19A /* AuthViewController.swift in Sources */,
 				F5D0AD832C382B5100A1AD1F /* APICaller.swift in Sources */,
 				F5761AB22C344907004AD19A /* AuthManager.swift in Sources */,
-				F5D0AD872C383BA000A1AD1F /* ProfileViewController.swift in Sources */,
+				F5D0AD872C383BA000A1AD1F /* ProfileView.swift in Sources */,
 				F5761AB02C3444DE004AD19A /* TabBarViewController.swift in Sources */,
+				F55185172C3D341C00AEAFC2 /* SignOutView.swift in Sources */,
 				F5761AAA2C34449D004AD19A /* HomeViewController.swift in Sources */,
 				F5761AAC2C3444B1004AD19A /* MyMoodViewController.swift in Sources */,
 				F5127C852C342301003EA34D /* AppDelegate.swift in Sources */,
@@ -272,6 +287,7 @@
 				F5127C8F2C342301003EA34D /* Moody.xcdatamodeld in Sources */,
 				F55F06742C3571CF0001FFE6 /* Extensions.swift in Sources */,
 				F5A04CD72C36EC30003068DE /* AuthResponse.swift in Sources */,
+				F577BE8A2C3AD8E3007B636C /* PlaylistCollectionViewCell.swift in Sources */,
 				F5127C872C342301003EA34D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

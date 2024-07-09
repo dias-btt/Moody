@@ -1,21 +1,21 @@
 //
-//  ProfileViewController.swift
+//  SignOutView.swift
 //  Moody
 //
-//  Created by Диас Сайынов on 05.07.2024.
+//  Created by Диас Сайынов on 09.07.2024.
 //
 
 import UIKit
 import SnapKit
 import Kingfisher
 
-class ProfileViewController: UIView {
+class SignOutView: UIView {
 
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 40
+        imageView.image = UIImage(named: "signOut")
         return imageView
     }()
 
@@ -23,7 +23,8 @@ class ProfileViewController: UIView {
         let label = UILabel()
         label.textAlignment = .left
         label.font = UIFont(name: "Gotham-Bold", size: 18)
-        label.textColor = .black
+        label.textColor = .white
+        label.text = "Sign Out"
         return label
     }()
 
@@ -46,25 +47,23 @@ class ProfileViewController: UIView {
         imageView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(10)
             make.leading.equalToSuperview().offset(10)
-            make.width.height.equalTo(80)
+            make.width.height.equalTo(30)
         }
 
         // Add titleLabel
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.leading.equalTo(imageView.snp.trailing).offset(20)
-            make.top.equalToSuperview().offset(10)
             make.trailing.equalToSuperview().offset(20)
+            make.centerY.equalTo(imageView.snp.centerY)
         }
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(signOutTapped))
+        self.addGestureRecognizer(tapGesture)
     }
-
-    func configure(imageURL: URL?, title: String) {
-        if let imageURL = imageURL {
-            imageView.kf.setImage(with: imageURL)
-        } else {
-            imageView.image = UIImage(named: "placeholder_image")
-        }
-        titleLabel.text = title
+    
+    @objc private func signOutTapped() {
+        // Notify the delegate or handle sign-out directly
+        NotificationCenter.default.post(name: Notification.Name("SignOutNotification"), object: nil)
     }
 }
-
