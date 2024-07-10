@@ -51,7 +51,7 @@ final class APICaller {
         }
     }
     
-    public func getTopFiveTracks(completion: @escaping (Result<String, Error>) -> Void){
+    public func getTopFiveTracks(completion: @escaping (Result<TopTracksResponse, Error>) -> Void){
         createRequest(with: URL(string: Constants.baseTopUrl + "/tracks"),
                       type: .GET)
         { request in
@@ -62,9 +62,11 @@ final class APICaller {
                 }
                 
                 do {
-                    let result = try JSONSerialization.jsonObject(with: data)
+                    let json = try JSONSerialization.jsonObject(with: data)
+                    print(json)
+                    let result = try JSONDecoder().decode(TopTracksResponse.self, from: data)
                     print(result)
-                    //completion(.success(result))
+                    completion(.success(result))
                 } catch {
                     completion(.failure(APIError.decodingFailure))
                     print("Error \(error)")
