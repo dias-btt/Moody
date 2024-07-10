@@ -17,7 +17,6 @@ class TabBarViewController: UITabBarController {
         let vc3 = LibraryViewController()
         vc1.title = "Home"
         vc2.title = "My Mood"
-        vc3.title = "Library"
         
         vc1.navigationItem.largeTitleDisplayMode = .always
         vc2.navigationItem.largeTitleDisplayMode = .always
