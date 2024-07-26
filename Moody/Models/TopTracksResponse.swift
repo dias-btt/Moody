@@ -9,6 +9,21 @@
 
 import Foundation
 
+struct RecommendedTracks: Codable {
+    let tracks: [AudioTrack]
+}
+
+struct AudioTrack: Codable {
+    let album: Album
+    let artists: [Artist]
+    let available_markets: [String]
+    let disc_number: Int
+    let duration_ms: Int
+    let explicit: Bool
+    let name: String
+    let popularity: Int
+}
+
 struct TopTracksResponse: Codable {
     let items: [Track]
 }

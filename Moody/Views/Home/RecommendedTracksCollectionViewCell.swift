@@ -1,16 +1,17 @@
 //
-//  TopFiveTracksCollectionViewCell.swift
+//  RecommendedTracksCollectionViewCell.swift
 //  Moody
 //
-//  Created by Диас Сайынов on 10.07.2024.
+//  Created by Диас Сайынов on 26.07.2024.
 //
 
+import Foundation
 import UIKit
 import Kingfisher
 import SnapKit
 
-class TopFiveTracksCollectionViewCell: UICollectionViewCell {
-    static let identifier = "TopFiveTracksCollectionViewCell"
+class RecommendedTracksCollectionViewCell: UICollectionViewCell {
+    static let identifier = "RecommendedTracksCollectionViewCell"
     
     private let coverImage: UIImageView = {
         let imageView = UIImageView()
@@ -79,7 +80,7 @@ class TopFiveTracksCollectionViewCell: UICollectionViewCell {
         coverImage.image = UIImage(named: "placeholder")
     }
     
-    func configure(with model: TopFiveTracksViewModel) {
+    func configure(with model: RecommendedTracksViewModel) {
         if let url = model.artworkURL {
             coverImage.kf.setImage(with: url)
         } else {
