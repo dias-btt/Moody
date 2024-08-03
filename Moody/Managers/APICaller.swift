@@ -74,8 +74,31 @@ final class APICaller {
         }
     }
     
-    public func getRecommendations(completion: @escaping (Result<RecommendedTracks, Error>) -> Void){
-        let seeds = "pop,country"
+    public func getRecommendedGenres(completion: @escaping ((Result<RecommendedGenreResponse, Error>) -> Void)){
+        print("creating request...")
+        createRequest(
+            with: URL(string: Constants.baseAPIUrl + "/recommendations/available-genre-seeds"),
+            type: .GET) { request in
+                let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                    guard let data = data, error == nil else {
+                        return
+                    }
+                    
+                    do {
+                        let result = try JSONDecoder().decode(RecommendedGenreResponse.self, from: data)
+                        print(result)
+                        completion(.success(result))
+                    } catch {
+                        print(error)
+                        completion(.failure(error))
+                    }
+                }
+                task.resume()
+            }
+    }
+    
+    public func getRecommendations(genres: Set<String>, completion: @escaping (Result<RecommendedTracks, Error>) -> Void){
+        let seeds = genres.joined(separator: ",")
         guard var urlComponents = URLComponents(string: Constants.baseAPIUrl + "/recommendations") else {
             completion(.failure(APIError.dataFailure))
             return

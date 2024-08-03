@@ -33,6 +33,7 @@
 		F577BE8A2C3AD8E3007B636C /* PlaylistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F577BE892C3AD8E3007B636C /* PlaylistCollectionViewCell.swift */; };
 		F58B8D2C2C53D9DD0040C263 /* RecommendedTracksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58B8D2B2C53D9DD0040C263 /* RecommendedTracksViewModel.swift */; };
 		F58B8D2E2C53DAD30040C263 /* RecommendedTracksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58B8D2D2C53DAD30040C263 /* RecommendedTracksCollectionViewCell.swift */; };
+		F58B8D302C53DE430040C263 /* TrackDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58B8D2F2C53DE430040C263 /* TrackDetailViewController.swift */; };
 		F5A04CD72C36EC30003068DE /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A04CD62C36EC30003068DE /* AuthResponse.swift */; };
 		F5D0AD832C382B5100A1AD1F /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D0AD822C382B5100A1AD1F /* APICaller.swift */; };
 		F5D0AD852C382B9F00A1AD1F /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D0AD842C382B9F00A1AD1F /* UserProfile.swift */; };
@@ -67,6 +68,7 @@
 		F577BE892C3AD8E3007B636C /* PlaylistCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCollectionViewCell.swift; sourceTree = "<group>"; };
 		F58B8D2B2C53D9DD0040C263 /* RecommendedTracksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedTracksViewModel.swift; sourceTree = "<group>"; };
 		F58B8D2D2C53DAD30040C263 /* RecommendedTracksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedTracksCollectionViewCell.swift; sourceTree = "<group>"; };
+		F58B8D2F2C53DE430040C263 /* TrackDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailViewController.swift; sourceTree = "<group>"; };
 		F5A04CD62C36EC30003068DE /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		F5D0AD822C382B5100A1AD1F /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		F5D0AD842C382B9F00A1AD1F /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
@@ -134,8 +136,9 @@
 			isa = PBXGroup;
 			children = (
 				F5218AF72C3ED2B80087985B /* TopFiveTracksCollectionViewCell.swift */,
-				F51B80712C47FDA000C0CAD5 /* SectionHeader.swift */,
 				F58B8D2D2C53DAD30040C263 /* RecommendedTracksCollectionViewCell.swift */,
+				F51B80712C47FDA000C0CAD5 /* SectionHeader.swift */,
+				F58B8D2F2C53DE430040C263 /* TrackDetailViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				F5761AB02C3444DE004AD19A /* TabBarViewController.swift in Sources */,
 				F51B80722C47FDA000C0CAD5 /* SectionHeader.swift in Sources */,
 				F5D0AD852C382B9F00A1AD1F /* UserProfile.swift in Sources */,
+				F58B8D302C53DE430040C263 /* TrackDetailViewController.swift in Sources */,
 				F5761AC52C345479004AD19A /* AuthViewController.swift in Sources */,
 				F5D0AD832C382B5100A1AD1F /* APICaller.swift in Sources */,
 				F5761AB22C344907004AD19A /* AuthManager.swift in Sources */,

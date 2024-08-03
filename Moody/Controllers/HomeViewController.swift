@@ -82,21 +82,33 @@ class HomeViewController: UIViewController {
                 }
             }
         }
-        
         group.enter()
-        APICaller.shared.getRecommendations { [weak self] result in
-            defer {
-                group.leave()
-            }
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let model):
-                    recommendations = model
-                case .failure(let error):
-                    let alert = UIAlertController(title: "Oops", message: error.localizedDescription, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
-                    self?.present(alert, animated: true)
+        APICaller.shared.getRecommendedGenres { result in
+            switch result{
+            case .success(let model):
+                let genres = model.genres
+                var seeds = Set<String>()
+                while seeds.count < 5 {
+                    if let random = genres.randomElement(){
+                        seeds.insert(random)
+                    }
                 }
+                APICaller.shared.getRecommendations(genres: seeds) { [weak self] result in
+                    defer {
+                        group.leave()
+                    }
+                    DispatchQueue.main.async {
+                        switch result {
+                        case .success(let model):
+                            recommendations = model
+                        case .failure(let error):
+                            let alert = UIAlertController(title: "Oops", message: error.localizedDescription, preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+                            self?.present(alert, animated: true)
+                        }
+                    }
+                }
+            case .failure(let error): break
             }
         }
 
@@ -211,6 +223,20 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             let viewModel = viewModels[indexPath.row]
             cell.configure(with: viewModel)
             return cell
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let type = sections[indexPath.section]
+        switch type {
+        case .topFiveTracks(let viewModels):
+            let viewModel = viewModels[indexPath.row]
+            let detailVC = TrackDetailViewController(viewModel: viewModel)
+            detailVC.modalPresentationStyle = .pageSheet
+            present(detailVC, animated: true, completion: nil)
+        
+        default:
+            break
         }
     }
     

@@ -13,6 +13,10 @@ struct RecommendedTracks: Codable {
     let tracks: [AudioTrack]
 }
 
+struct RecommendedGenreResponse: Codable {
+    let genres: [String]
+}
+
 struct AudioTrack: Codable {
     let album: Album
     let artists: [Artist]
