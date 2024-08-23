@@ -40,11 +40,9 @@ final class APICaller {
                 
                 do {
                     let result = try JSONDecoder().decode(UserProfile.self, from: data)
-                    print(result)
                     completion(.success(result))
                 } catch {
                     completion(.failure(APIError.decodingFailure))
-                    print("Error \(error)")
                 }
             }
             task.resume()
@@ -62,12 +60,10 @@ final class APICaller {
                 }
                 
                 do {
-                    let json = try JSONSerialization.jsonObject(with: data)
                     let result = try JSONDecoder().decode(TopTracksResponse.self, from: data)
                     completion(.success(result))
                 } catch {
                     completion(.failure(APIError.decodingFailure))
-                    print("Error \(error)")
                 }
             }
             task.resume()
@@ -75,7 +71,6 @@ final class APICaller {
     }
     
     public func getRecommendedGenres(completion: @escaping ((Result<RecommendedGenreResponse, Error>) -> Void)){
-        print("creating request...")
         createRequest(
             with: URL(string: Constants.baseAPIUrl + "/recommendations/available-genre-seeds"),
             type: .GET) { request in
@@ -86,7 +81,6 @@ final class APICaller {
                     
                     do {
                         let result = try JSONDecoder().decode(RecommendedGenreResponse.self, from: data)
-                        print(result)
                         completion(.success(result))
                     } catch {
                         print(error)
@@ -97,39 +91,95 @@ final class APICaller {
             }
     }
     
-    public func getRecommendations(genres: Set<String>, completion: @escaping (Result<RecommendedTracks, Error>) -> Void){
+    func getRecommendations(
+        genres: Set<String>,
+        acousticness: Double? = nil,
+        danceability: Double? = nil,
+        energy: Double? = nil,
+        instrumentalness: Double? = nil,
+        liveness: Double? = nil,
+        loudness: Double? = nil,
+        speechiness: Double? = nil,
+        tempo: Double? = nil,
+        time_signature: Int? = nil,
+        valence: Double? = nil,
+        completion: @escaping (Result<RecommendedTracks, Error>) -> Void
+    ){
         let seeds = genres.joined(separator: ",")
-        guard var urlComponents = URLComponents(string: Constants.baseAPIUrl + "/recommendations") else {
-            completion(.failure(APIError.dataFailure))
-            return
-        }
-        urlComponents.queryItems = [
-            URLQueryItem(name: "seed_genres", value: seeds)
-        ]
-            
-        guard let url = urlComponents.url else {
-            completion(.failure(APIError.dataFailure))
-            return
-        }
-        createRequest(with: URL(string: Constants.baseAPIUrl + "/recommendations?seed_genres=\(seeds)"),
-                      type: .GET)
-        { request in
-            let task = URLSession.shared.dataTask(with: request) { data, _, error in
-                guard let data = data, error == nil else {
-                    completion(.failure(APIError.dataFailure))
-                    return
-                }
-                
-                do {
-                    let result = try JSONDecoder().decode(RecommendedTracks.self, from: data)
-                    print(result)
-                    completion(.success(result))
-                } catch {
-                    completion(.failure(APIError.decodingFailure))
-                    print("Error \(error)")
-                }
+            guard var urlComponents = URLComponents(string: Constants.baseAPIUrl + "/recommendations") else {
+                completion(.failure(APIError.dataFailure))
+                return
             }
-            task.resume()
+            
+            func queryItemValue(for value: Any?) -> String? {
+                if let doubleValue = value as? Double {
+                    return String(doubleValue)
+                } else if let intValue = value as? Int {
+                    return String(intValue)
+                }
+                return nil
+            }
+            
+            var queryItems: [URLQueryItem] = []
+            queryItems.append(URLQueryItem(name: "seed_genres", value: seeds))
+            
+            if let acousticness = acousticness {
+                queryItems.append(URLQueryItem(name: "target_acousticness", value: queryItemValue(for: acousticness)))
+            }
+            if let danceability = danceability {
+                queryItems.append(URLQueryItem(name: "target_danceability", value: queryItemValue(for: danceability)))
+            }
+            if let energy = energy {
+                queryItems.append(URLQueryItem(name: "target_energy", value: queryItemValue(for: energy)))
+            }
+            if let instrumentalness = instrumentalness {
+                queryItems.append(URLQueryItem(name: "target_instrumentalness", value: queryItemValue(for: instrumentalness)))
+            }
+            if let liveness = liveness {
+                queryItems.append(URLQueryItem(name: "target_liveness", value: queryItemValue(for: liveness)))
+            }
+            if let loudness = loudness {
+                queryItems.append(URLQueryItem(name: "target_loudness", value: queryItemValue(for: loudness)))
+            }
+            if let speechiness = speechiness {
+                queryItems.append(URLQueryItem(name: "target_speechiness", value: queryItemValue(for: speechiness)))
+            }
+            if let tempo = tempo {
+                queryItems.append(URLQueryItem(name: "target_tempo", value: queryItemValue(for: tempo)))
+            }
+            if let time_signature = time_signature {
+                queryItems.append(URLQueryItem(name: "target_time_signature", value: queryItemValue(for: time_signature)))
+            }
+            if let valence = valence {
+                queryItems.append(URLQueryItem(name: "target_valence", value: queryItemValue(for: valence)))
+            }
+            
+            urlComponents.queryItems = queryItems
+                    
+            guard let url = urlComponents.url else {
+                completion(.failure(APIError.dataFailure))
+                return
+            }
+                        
+            createRequest(with: url, type: .GET) { request in
+                let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                    guard let data = data, error == nil else {
+                        print("Error: \(String(describing: error))")  // Debug print
+                        completion(.failure(APIError.dataFailure))
+                        return
+                    }
+                    
+                    let jsonString = String(data: data, encoding: .utf8) ?? "Unable to convert data to string"
+                    
+                    do {
+                        let result = try JSONDecoder().decode(RecommendedTracks.self, from: data)
+                        completion(.success(result))
+                    } catch {
+                        print("Decoding error: \(error)")  // Debug print
+                        completion(.failure(APIError.decodingFailure))
+                    }
+                }
+                task.resume()
         }
     }
     

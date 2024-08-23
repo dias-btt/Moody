@@ -19,7 +19,7 @@ final class AuthManager {
         static let clientSecret = "ec12ed2ee2c441699922d698ff943dcc"
         static let tokenAPIUrl = "https://accounts.spotify.com/api/token"
         static let redirect_uri = "https://chatgpt.com"
-        static let scope = "user-read-private user-top-read"
+        static let scope = "user-read-private user-top-read user-read-currently-playing user-read-playback-state"
     }
     
     public var signInURL: URL? {
@@ -190,5 +190,58 @@ final class AuthManager {
         UserDefaults.standard.setValue(nil, forKey: "refresh_token")
         UserDefaults.standard.setValue(nil, forKey: "expiration")
         completion(true)
+    }
+    
+    public func getCurrentTrack(completion: @escaping (Result<CurrentTrackResponse, Error>) -> Void) {
+        guard let url = URL(string: "https://api.spotify.com/v1/me/player/currently-playing") else {
+            return
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(accessToken ?? "")", forHTTPHeaderField: "Authorization")
+        
+        let task = URLSession.shared.dataTask(with: request) { data, _, error in
+            guard let data = data, error == nil else {
+                completion(.failure(APIError.dataFailure))
+                return
+            }
+
+            do {
+                let result = try JSONDecoder().decode(CurrentTrackResponse.self, from: data)
+                completion(.success(result))
+            } catch {
+                print("error \(error)")
+                completion(.failure(APIError.decodingFailure))
+            }
+        }
+        task.resume()
+    }
+    
+    public func getTrackFeatures(id: String, completion: @escaping (Result<TrackFeatures, Error>) -> Void){
+        guard let url = URL(string: "https://api.spotify.com/v1/audio-features/\(id)") else {
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(accessToken ?? "")", forHTTPHeaderField: "Authorization")
+        
+        let task = URLSession.shared.dataTask(with: request) { data, _, error in
+            guard let data = data, error == nil else {
+                completion(.failure(APIError.dataFailure))
+                return
+            }
+            let jsonString = String(data: data, encoding: .utf8) ?? "Unable to convert data to string"
+            print(jsonString)
+
+            do {
+                let result = try JSONDecoder().decode(TrackFeatures.self, from: data)
+                completion(.success(result))
+            } catch {
+                completion(.failure(APIError.decodingFailure))
+            }
+        }
+        task.resume()
     }
 }
