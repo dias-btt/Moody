@@ -155,16 +155,12 @@ final class APICaller {
             }
             
             urlComponents.queryItems = queryItems
-        
-            print(urlComponents)
-            
+                    
             guard let url = urlComponents.url else {
                 completion(.failure(APIError.dataFailure))
                 return
             }
-            
-            print("Final URL: \(url)")  // Debug print
-            
+                        
             createRequest(with: url, type: .GET) { request in
                 let task = URLSession.shared.dataTask(with: request) { data, _, error in
                     guard let data = data, error == nil else {
@@ -174,7 +170,6 @@ final class APICaller {
                     }
                     
                     let jsonString = String(data: data, encoding: .utf8) ?? "Unable to convert data to string"
-                    print("Response JSON: \(jsonString)")  // Debug print
                     
                     do {
                         let result = try JSONDecoder().decode(RecommendedTracks.self, from: data)
